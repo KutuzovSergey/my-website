@@ -1,0 +1,525 @@
+@import '@/scss/_mixins.scss';
+@import '@/scss/style.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+  .window{
+    position: fixed;
+    z-index: 99999999999999;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    background-color: rgba(0,0,0,0.7);
+
+    &__wrapper{
+      width: 700px;
+      height: 500px;
+      border-radius: 10px;
+      margin: auto;
+      background-color: #ffffff;
+    }
+    &__wrapper>form{
+      width: 100%;
+      height: 100%;
+    }
+    &__title{
+      width: 90%;
+      height: 13%;
+      padding-top: 2%;
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      border-bottom: 1px solid rgba(45,55,79,0.15);
+    }
+    &__title>span{
+      font-size: 1rem;
+      color: #333;
+    }
+    &__close{
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    &__plus{
+      transform: rotate(45deg);
+      position: relative;
+      width: 14px;
+      height: 2px;
+      background-color: #333;
+      left: 0;
+      top: 13px;
+    }
+    &__plus:after{
+      content: "";
+      position: absolute;
+      background-color: #333;
+      width: 2px;
+      height: 15px;
+      left: 6px;
+      top: -6px;
+    }
+    &__block{
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      height: 84%;
+      margin: auto;
+    }
+    &__block>label{
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    &__block>label>span{
+      width: 10%;
+      text-align: left;
+      margin: auto 0;
+      font-size: 0.9rem;
+      color: rgba(45,55,79,0.60);
+    }
+    &__consent{
+      width: 65%;
+      height: 100%;
+      display: flex;
+    }
+    &__consent>label{
+      font-size: 0.8rem;
+      margin: auto;
+      width: 100%;
+      text-align: left;
+    }
+    .photo{
+      width: 30%;
+      height: 70%;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;;
+
+      &__img{
+        width: 100%;
+        height: 80%;
+        text-align: center;
+        overflow: hidden;
+        background-image: url('../assets/modalWindow/unnamed.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      &__img-activ{
+        background: none;
+      }
+      &__buttons{
+        width: 100%;
+        height: 19.5%;
+        display: flex;
+      }
+      &__button{
+        width: 100%;
+        cursor: pointer;
+      }
+      &__button>button{
+        @include buttonMain(100%, 100%, 1rem);
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+      }
+      &__button>label{
+        @include buttonMain(100%, 100%, 1rem);
+        border-right: none;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+      }
+      &__button>label>input{
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      &__text{
+        color: #ffffff;
+        font-size: 1rem;
+        margin: auto;
+      }
+      &__download{
+        border-right: 1px solid #ffffff;
+      }
+      &__take{
+        border-left: 1px solid #ffffff;
+      }
+      &__user{
+        width: auto;
+        height: 100%;
+      }
+      .camera_stream{
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+      }
+    }
+    .findings{
+      width: 60%;
+      height: 99%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__name{
+        display: flex;
+        position: relative;
+        width: 100%;
+        margin-bottom: 3%;
+        height: 10%;
+        border-bottom: 1px solid rgba(45, 55, 79, 0.15);
+      }
+      &__input{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: auto;
+      }
+      &__input>span{
+        width: 25%;
+        display: block;
+        text-align: left;
+      }
+      &__input>input{
+        width: 70%;
+        border: none;
+      }
+      &__input>input::-webkit-input-placeholder{
+        font-size: 1rem;
+      }
+      &__input>input:-moz-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea>textarea::-webkit-input-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea>textarea:-moz-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea{
+        width: 100%;
+        height: 40%;
+        margin: auto;
+        position: relative;
+      }
+      &__textarea>textarea{
+        width: 100%;
+        height: 100%;
+        border: none;
+        resize: none;
+      }
+      &__buttons{
+        width: 100%;
+        height: 10%;
+        margin: 0 auto;
+        display: flex;
+      }
+      &__button{
+        @include buttonMain(40%, 100%, 1rem);
+        margin: 0 auto;
+      }
+      &__error{
+        border-bottom: solid 1px #ff0000; 
+      }
+    }
+  }
+  .error_form{
+      color: #ff0000;
+      position: absolute;
+      font-size: 0.8rem;
+      left: 0;
+      bottom: 0;
+      font-weight: bold;
+    }
+  @media (max-width: 2600px){
+  .window{
+
+    &__consent>label{
+      font-size: 1rem;
+    }
+    &__button{
+      font-size: 1.3rem;
+    }
+  }
+}
+  @media (max-width: 1967px){
+  .window{
+
+    &__consent>label{
+      font-size: 0.8rem;
+    }
+    &__button{
+      font-size: 1rem;
+    }
+    .photo{
+      height: 60%;
+    }
+  }
+}
+@media (max-width: 1740px){
+  .window{
+
+    &__wrapper{
+      width: 700px;
+      height: 500px;
+    }
+    .photo{
+      height: 50%;
+    }
+    &__consent>label{
+      font-size: 0.8rem;
+    }
+    &__button{
+      font-size: 1rem;
+    }
+    .findings{
+
+      &__input>span{
+        width: 20%;
+      }
+      &__input>input{
+        width: 80%;
+      }
+    }
+  }
+}
+@media (max-width: 1140px){
+   .window{
+
+    &__wrapper{
+      width: 700px;
+      height: 500px;
+    }
+    .findings{
+
+      &__input>span{
+        width: 20%;
+      }
+      &__input>input{
+        width: 80%;
+      }
+      &__buttons{
+        height: 10%;
+      }
+    }
+    .photo{
+      height: 55%;
+    }
+  }
+}
+@media (max-width: 967px){
+  .window{
+
+    &__wrapper{
+      width: 600px;
+      height: 500px;
+    }
+    .photo{
+      &__text{
+        font-size: 0.9rem;
+      }
+    }
+    .findings{
+
+      &__input>span{
+        font-size: 0.8rem;
+      }
+      &__input>input{
+      }
+      &__input>input::-webkit-input-placeholder{
+        font-size: 0.8rem;
+      }
+      &__input>input:-moz-placeholder{
+        font-size: 0.8rem;
+      }
+      &__textarea>textarea::-webkit-input-placeholder{
+        font-size: 0.8rem;
+      }
+      &__textarea>textarea:-moz-placeholder{
+        font-size: 0.8rem;
+      }
+      &__button{
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+@media (max-width: 667px){
+  .window{
+
+    &__wrapper{
+      width: 500px;
+      height: 400px;
+    }
+    &__input{
+      font-size: 0.88rem;
+    }
+    &__textarea{
+      height: 46%;
+    }
+    &__textarea>textarea::placeholder{
+      font-size: 0.88rem;
+    }
+    &__buttons{
+      height: 14%;
+    }
+    &__consent>label{
+      font-size: 0.7rem;
+    }
+    &__button{
+      width: 30%;
+      font-size: 0.8rem;
+    }
+    .photo{
+      &__img{
+        height: 78%;
+      }
+      &__buttons{
+        height: 21%;
+      }
+    }
+    .findings{
+
+      &__input>span{
+        width: 25%;
+      }
+      &__input>input{
+         width: 70%;
+      }
+      &__textarea{
+        height: 35%;
+      }
+      &__buttons{
+        height: 13%;
+      }
+      &__button{
+        width: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 540px){
+  .window{
+
+    &__wrapper{
+      width: 400px;
+      height: 350px;
+    }
+    &__title{
+      height: 13%;
+    }
+    &__block{
+      justify-content: space-between;
+    }
+    &__block>label{
+    }
+    &__block>label>span{
+      width: 15%;
+      font-size: 0.86rem;
+    }
+    &__input{
+      width: 75%;
+      font-size: 0.8rem;
+    }
+    &__textarea{
+      height: 44%;
+    }
+    &__textarea>textarea::placeholder{
+      font-size: 0.8rem;
+    }
+    &__buttons{
+      width: 94%;
+      height: 14%;
+    }
+    &__button{
+      width: 32%;
+    }
+    .findings{
+
+      &__input{
+        font-size: 0.7rem;
+      }
+      &__textarea>textarea{
+        font-size: 0.7rem;
+      }
+      &__input>input{
+        width: 70%;
+      }
+      &__input>span{
+        width: 30%;
+      }
+      &__buttons{
+        height: 14%;
+      }
+      &__buttons>button{
+        font-size: 0.9rem;
+        width: 60%;
+      }
+    }
+    .photo{
+      height: 60%;
+      width: 35%;
+      
+      &__img{
+        height: 70%;
+      }
+      &__buttons{
+        height: 23%;
+      }
+      &__text{
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+@media (max-width: 410px){
+  .window{
+
+    &__wrapper{
+      width: 300px;
+      height: 470px;
+    }
+    &__title{
+      height: 8%;
+    }
+    &__block{
+      height: 90%;
+      flex-direction: column;
+    }
+    .photo{
+      height: 50%;
+      width: 70%;
+      margin: 0 auto;
+
+      &__img{
+        height: 80%;
+      }
+      &__buttons{
+        height: 20%;
+      }
+    }
+    .findings{
+      width: 90%;
+      height: 50%;
+      margin: 0 auto;
+      padding-top: 5%;
+
+      &__name{
+        margin-bottom: 4%;
+      }
+      &__textarea{
+        margin: 0 auto;
+        height: 20%!important;
+      }
+      &__buttons{
+        height: 20%!important;
+      }
+    }
+  }
+}
