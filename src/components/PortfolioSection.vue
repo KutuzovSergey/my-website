@@ -57,56 +57,59 @@
       </div>
     </div> -->
     <div class="portfolio__gallery gallery">
-      <div class="gallery__block website">
+      <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/course/index.html" class="gallery__link" target="_blank">
-          <img src="@/assets/portfolio/0_8.png" alt="">
+          <img src="@/assets/portfolio/0_8.png" alt="courses">
+        
+          <div class="gallery__discription" id="courses">
+            <span>рекламный лендинг. курсы для репетиторов</span>
+          </div>
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
-        <div class="gallery__discription">
-          <span>рекламный лендинг, курсы для репетиторов</span>
-        </div>
       </div>
-      <div class="gallery__block website">
+      <div class="gallery__block website" id="woodenHousesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/housesBaths/index.html" class="gallery__link" target="_blank">
-          <img src="@/assets/portfolio/0_5.png" alt="">
+          <img src="@/assets/portfolio/0_5.png" alt="wooden houses">
+        
+          <div class="gallery__discription" id="woodenHouses">
+            <span>многостраничный сайт. продажа деревянных домов</span>
+          </div>
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
       </div>
-      <div class="gallery__block website">
+      <div class="gallery__block website" id="muscovitesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/drummers/index.php" class="gallery__link" target="_blank">
-          <img src="@/assets/portfolio/0_3.png" alt="">
+          <img src="@/assets/portfolio/0_3.png" alt="muscovites">
+        
+          <div class="gallery__discription" id="muscovites">
+            <span>многостраничный сайт. ансамбль барабанщиц москвички</span>
+          </div>
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
       </div>
-      <div class="gallery__block landing">
+      <div class="gallery__block landing" id="quizizzBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/quiz/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/0_6.png" alt="">
+          <img src="@/assets/portfolio/0_6.png" alt="quizizz">
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
+
+        <div class="gallery__discription" id="quizizz">
+          <span>лендинг. квиз</span>
         </div>
       </div>
-      <div class="gallery__block landing">
+      <div class="gallery__block landing" id="greetingsBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/email/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/3.png" alt="">
+          <img src="@/assets/portfolio/3.png" alt="New Year's greetings">
+        
+          <div class="gallery__discription" id="greetings">
+            <span>email письмо. новогодние поздравления</span>
+          </div>
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
       </div>
-      <div class="gallery__block landing">
-        <a href="/myWork/email/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/3.png" alt="">
+      <div class="gallery__block landing" id="bredliBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
+        <a href="/myWork/bredli/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/4.png" alt="bredli">
+
+          <div class="gallery__discription" id="bredli">
+            <span>сайт-везитка, лендинг. компания по установке охранных систем bredli</span>
+          </div>
         </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -146,8 +149,8 @@
         this.showMenuAdaptiv = false;
       },
       searchType: function (event){
-        let elem = event.target;
-        let elems = document.querySelectorAll('.menu__item');
+        const elem = event.target;
+        const elems = document.querySelectorAll('.menu__item');
 
         for (var i = 0; i < elems.length; i++) {
           elems[i].classList.remove('button-activ');
@@ -161,6 +164,70 @@
       },
       showingDescription: function (event){
         const galleryBlock = event.target;
+
+        switch (galleryBlock.id) {
+          case "coursesBlock":
+              const discriptionCourses = document.querySelector('#courses');
+              discriptionCourses.classList.add('gallery__discription_active');
+            break;
+          case "woodenHousesBlock":
+              const discriptionWooden = document.querySelector('#woodenHouses');
+              discriptionWooden.classList.add('gallery__discription_active');
+            break;
+          case "muscovitesBlock":
+              const discriptionMuscovites = document.querySelector('#muscovites');
+              discriptionMuscovites.classList.add('gallery__discription_active');
+          break;
+          case "quizizzBlock":
+              const discriptionQuizizz = document.querySelector('#quizizz');
+              discriptionQuizizz.classList.add('gallery__discription_active');
+          break;
+          case "greetingsBlock":
+              const discriptionGreetings = document.querySelector('#greetings');
+              discriptionGreetings.classList.add('gallery__discription_active');
+          break;
+          case "bredliBlock":
+              const discriptionBredli = document.querySelector('#bredli');
+              discriptionBredli.classList.add('gallery__discription_active');
+          break;
+        
+          default:
+            break;
+        }
+      },
+      hidingDescription: function (event) {
+        const galleryBlock = event.target;
+        console.log(galleryBlock);
+
+        switch (galleryBlock.id) {
+          case "coursesBlock":
+              const discriptionCourses = document.querySelector('#courses');
+              discriptionCourses.classList.remove('gallery__discription_active');
+            break;
+          case "woodenHousesBlock":
+              const discriptionWooden = document.querySelector('#woodenHouses');
+              discriptionWooden.classList.remove('gallery__discription_active');
+            break;
+          case "muscovitesBlock":
+              const discriptionMuscovites = document.querySelector('#muscovites');
+              discriptionMuscovites.classList.remove('gallery__discription_active');
+          break;
+          case "quizizzBlock":
+              const discriptionQuizizz = document.querySelector('#quizizz');
+              discriptionQuizizz.classList.remove('gallery__discription_active');
+          break;
+          case "greetingsBlock":
+              const discriptionGreetings = document.querySelector('#greetings');
+              discriptionGreetings.classList.remove('gallery__discription_active');
+          break;
+          case "bredliBlock":
+              const discriptionBredli = document.querySelector('#bredli');
+              discriptionBredli.classList.remove('gallery__discription_active');
+          break;
+        
+          default:
+            break;
+        }
       }
     }
   }
@@ -266,6 +333,7 @@
         width: 33.33%;
         height: auto;
         border: 1px solid #000;
+        overflow: hidden;
       }
 
       &__block:hover{
@@ -273,49 +341,42 @@
         z-index: 99999;
       }
 
-      &__block:hover &__indicator{
-        display: block;
-      }
-
       &__discription{
-        display: none;
+        visibility: hidden;
         position: absolute;
+        cursor: pointer;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 1%;
         height: 1%;
-        top: 0;
+        bottom: 0;
         left: 0;
-        transform: scale(1.1);
+        transition: width 2s, height 2s, padding 2s;
       }
 
-      &__block:hover &__discription{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        padding: 30px;
-        background-color: rgba(255, 6, 23, 0.460);
-      }
-
-      &__link>img:hover &__discription{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        padding: 30px;
-        background-color: rgba(255, 6, 23, 0.460);
-      }
-
-      &__discription>span{
+       &__discription>span{
         text-align: center;
         text-transform: uppercase;
         font-weight: 900;
         color: #000;
+        font-size: 0rem;
+        transition: font-size 2s, font-weight 2s;
+      }
+
+      &__discription_active{
+        visibility: visible;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        background-color: rgba(34, 160, 65, 0.690);
+      }
+
+      &__discription_active>span{
         font-size: 1rem;
       }
+
 
       &__link{
         display: block;
@@ -329,39 +390,6 @@
         width: 100%;
         height: auto;
         margin: auto;
-      }
-
-      &__indicator{
-        display: none;
-        position: absolute;
-        background-color: #2196F3;
-        z-index: 9999;
-        width: 12%;
-        height: 9%;
-        top: 70%;
-        right: 0;
-      }
-
-      .indicator{
-
-        &__cross{
-          background: #ffffff;
-          height: 13px;
-          width: 2px;
-          position: relative;
-          left: 20px;
-          top: 6px;
-        }
-
-        &__cross:after{
-          content: "";
-          height: 2px;
-          width: 13px;
-          background: #ffffff;
-          position: absolute; 
-          left: -5px; 
-          top: 5px;
-        }
       }
     }
 
@@ -469,13 +497,13 @@
     @media (max-width: 600px){
     .portfolio{
       width: 100%;
-      height: 500px;
+      height: 660px;
     }
   }
 
   @media (max-width: 480px){
     .portfolio{
-      height: 1230px;
+      height: 1450px;
 
       .gallery{
         flex-direction: column;

@@ -101,10 +101,10 @@
                   <div 
                     class="progress-bar blue__line" 
                     role="progressbar" 
-                    style="width: 40%;" 
+                    style="width: 50%;" 
                     aria-valuenow="40" 
                     aria-valuemin="0" 
-                    aria-valuemax="60">40%</div>
+                    aria-valuemax="60">50%</div>
                 </div>
               </div>
               <div class="professional__item">
@@ -113,10 +113,10 @@
                   <div 
                     class="progress-bar react__line" 
                     role="progressbar" 
-                    style="width: 40%;" 
+                    style="width: 20%;" 
                     aria-valuenow="40" 
                     aria-valuemin="0" 
-                    aria-valuemax="60">40%</div>
+                    aria-valuemax="60">20%</div>
                 </div>
               </div>
               <div class="professional__item">

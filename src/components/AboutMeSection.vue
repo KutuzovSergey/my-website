@@ -16,7 +16,7 @@
         <div class="scheme__block design">
           <div class="scheme__wrapper">
             <div class="scheme__img">
-              <img src="@/assets/icon/screen_icon.svg" alt="" />
+              <img src="@/assets/icon/screen_icon.svg" alt="#" />
             </div>
             <div class="scheme__indicator"></div>
           </div>
@@ -97,7 +97,7 @@
       <div class="emaill__button">
         <button type="button" class="btn" @click="showWindowMail">
           <div class="emaill__button__icon">
-            <img src="@/assets/icon/email_icon.svg" alt="">
+            <img src="@/assets/icon/email_icon.svg" alt="#">
           </div>
           <span>Написать</span>
         </button>
@@ -344,7 +344,6 @@
       &__button__icon{
         width: 30px;
         height: auto;
-        // margin-right: 2px;
       }
     }
 
@@ -368,7 +367,7 @@
 
       .scheme{
         width: 80%;
-        height: 60%;
+        height: 50%;
         margin: auto;
 
         &__block{
@@ -384,7 +383,7 @@
 
       .data{
         width: 80%;
-        height: 30%;
+        height: 40%;
         margin: auto;
 
         &__item{
@@ -492,7 +491,7 @@
   @media (max-width: 600px){
     .aboutMe{
       width: 100%;
-      height: 1100px;
+      height: 1000px;
 
       .info{
         height: 22%;

@@ -17,7 +17,7 @@
               </div>
               <a href="#portfolio" class="btn slideshow__btn">
                 <div class="slideshow__btn__icon">
-                  <img src="@/assets/icon/eye_icon.svg" alt="">
+                  <img src="@/assets/icon/eye_icon.svg" alt="#">
                 </div>
                 <span type="button" >портфолио</span>
               </a>
@@ -45,7 +45,7 @@
               </div>
               <a href="#aboutMe" class="btn slideshow__btn">
                 <div class="slideshow__btn__icon">
-                  <img src="@/assets/icon/eye_icon.svg" alt="">
+                  <img src="@/assets/icon/eye_icon.svg" alt="#">
                 </div>
                 <span>обо мне</span>
               </a>
