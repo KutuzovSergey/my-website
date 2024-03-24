@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="logo">
       <div class="logo__img">
-        <img src="@/assets/logo.png" alt="logo">
+        <img src="@/assets/myPhoto.png" alt="logo">
       </div>
       <div class="logo__content">
         <div class="logo__title">

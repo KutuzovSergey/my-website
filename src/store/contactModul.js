@@ -38,6 +38,7 @@ export default {
 				'text_form': submit.text,
 			})
 			.then(function ( response ) {
+				console.log(response);
 			})
 			.catch(function ( error ){
 				console.log(error);
@@ -54,6 +55,7 @@ export default {
 				'text_form': submit.text,
 			})
 			.then(function ( response ) {
+				console.log(response);
 			})
 			.catch(function ( error ){
 				console.log(error);

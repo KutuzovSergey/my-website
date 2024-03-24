@@ -89,7 +89,7 @@
               rows="4" 
               placeholder="Сообщение"
               v-model.trim="feedback.text"
-              :class="$v.feedback.text.$dirty && !$v.feedback.text.required ? 'contact__error' : ''" /></textarea>
+              :class="$v.feedback.text.$dirty && !$v.feedback.text.required ? 'contact__error' : ''" ></textarea>
                <span class="error_form" v-if="$v.feedback.text.$dirty && !$v.feedback.text.required">не заполнено</span>
           </div>
           <div class="contact__button">

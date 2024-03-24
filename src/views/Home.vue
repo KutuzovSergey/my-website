@@ -4,10 +4,10 @@
     <ButtonLateralFace />
     <div class="content">
       <MenuAdditional 
-      class="menu-additional menu-additional_none"
-      id="menuAdditional"
-      @show="showEl"
-      @hide="hideEl"/>
+        class="menu-additional menu-additional_none"
+        id="menuAdditional"
+        @show="showEl"
+        @hide="hideEl"/>
       <MenuHeader class="block-animation block-anim-no" :menuHeaderLists="menuHeaderLists" />
       <AboutSection class="block-animation block-anim-no"/>
       <AboutMeSection class="block-animation block-anim-no" @showWindowMail="showMail"/>
@@ -76,12 +76,13 @@ export default {
   },
   methods: {
     showEl: function () {
-      let menuAdditional = document.getElementById('menuAdditional');
+      const menuAdditional = document.getElementById('menuAdditional');
 
       menuAdditional.classList.remove('menu-additional');
       menuAdditional.classList.add('menu-additional_activ');
     },
     hideEl: function () {
+      const menuAdditional = document.getElementById('menuAdditional');
       menuAdditional.classList.add('menu-additional');
       menuAdditional.classList.remove('menu-additional_activ');
     },
@@ -99,14 +100,22 @@ export default {
     },
   },
   mounted() {
-	const animItems = document.querySelectorAll('.block-animation');
-    if (animItems.length > 0) {
-      window.addEventListener('scroll', animOnScroll);
-      function animOnScroll() {
+  const animItems = document.querySelectorAll('.block-animation');
+    
+  if (animItems.length > 0) {
+
+      const offset = function (el) {
+          const rect = el.getBoundingClientRect(),
+          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      }
+
+      const animOnScroll = function () {
         for (var i = 0; i < animItems.length; i++) {
           const animItem = animItems[i];
           const animItemHeight = animItem.offsetHeight;
-          const animItemOffset =offset(animItem).top;
+          const animItemOffset = offset(animItem).top;
           const animStart = 4;
 
           let animItemPoint = window.innerHeight - animItemHeight / animStart;
@@ -124,15 +133,10 @@ export default {
         }
       }
 
-      function offset(el) {
-        const rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-      }
-
+      window.addEventListener('scroll', animOnScroll);
+      
       setTimeout(() =>{
-      	animOnScroll();
+        animOnScroll();
       }, 300);
     }
     window.addEventListener('scroll', sandwichShow);
@@ -145,7 +149,7 @@ export default {
         menu.classList.add('menu-additional_none');
       }
     }
-	}
+  }
 }
 </script>
 
@@ -153,11 +157,11 @@ export default {
 @import '@/scss/style.scss';
 
 .content{
-	width: 77%;
+  width: 77%;
   min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .menu-additional_activ{
@@ -199,9 +203,9 @@ export default {
 }
 
 @media (max-width: 1678px){
-	.content{
-		width: 90%;
-	}
+  .content{
+    width: 90%;
+  }
   .menu-additional_activ{
     width: 90%;
   }

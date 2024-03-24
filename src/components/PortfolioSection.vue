@@ -14,48 +14,6 @@
         <p>Здесь можно посмотреть мои работы. Лендинги, многостраничные сайты и небольшие приложения.</p>
       </div>
     </div>
-    <!-- <div class="portfolio__menu menu">
-      <ul class="menu__wrapper" @click="searchType">
-        <li class="menu__item button-activ all">
-          <span class="menu__link">Все</span>
-        </li>
-        <li class="menu__item landing">
-          <span class="menu__link">Лендинги</span>
-        </li>
-        <li class="menu__item website">
-          <span class="menu__link">Сайты</span>
-        </li>
-        <li class="menu__item applications">
-          <span class="menu__link">Приложения</span>
-        </li>
-      </ul>
-      <ul class="menu__adaptiv" v-if="showMenuAdaptiv">
-        <li class="item" v-for="portfolioMenuList in portfolioMenuLists"><span>{{ portfolioMenuList.title }}</span></li>
-      </ul>
-      <div class="sandwich" id="sandwich">
-        <transition>
-          <div class="sandwich__block" v-if="!sandwichShow" @click="showMenu" key="menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="sandwich__clear" v-else @click="hideMenu" key="clear"></div>
-        </transition>
-      </div>
-      <div class="menu__search">
-        <div class="menu__form">
-          <div class="menu__input">
-            <input type="text" placeholder="Searh">
-          </div>
-          <button>
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-out" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-              <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div> -->
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/course/index.html" class="gallery__link" target="_blank">
@@ -129,48 +87,20 @@
     data() {
       return {
         headerComponent: 'Моё портфолио',
-        portfolioMenuLists: [
-        {id: 1, title: 'Все', value: ''},
-        {id: 2, title: 'Лендинги', value: ''},
-        {id: 3, title: 'Сайты', value: ''},
-        {id: 4, title: 'Приложения', value: ''},
-        ],
-        sandwichShow: false,
-        showMenuAdaptiv: false,
       };
     },
     methods: {
-      showMenu: function (){
-        this.sandwichShow = true;
-        this.showMenuAdaptiv = true;
-      },
-      hideMenu: function (){
-        this.sandwichShow = false;
-        this.showMenuAdaptiv = false;
-      },
-      searchType: function (event){
-        const elem = event.target;
-        const elems = document.querySelectorAll('.menu__item');
-
-        for (var i = 0; i < elems.length; i++) {
-          elems[i].classList.remove('button-activ');
-        }
-
-        if (elem.matches('.menu__item')) {
-          elem.classList.add('button-activ');
-        } else if (elem.parentNode.matches('.menu__item')) {
-          elem.parentNode.classList.add('button-activ');
-        }
-      },
       showingDescription: function (event){
         const galleryBlock = event.target;
+        const COURSES_BLOCK = "coursesBlock";
+        const WOODEN_HOUSES_BLOCK = "woodenHousesBlock";
 
         switch (galleryBlock.id) {
-          case "coursesBlock":
+          case COURSES_BLOCK:
               const discriptionCourses = document.querySelector('#courses');
               discriptionCourses.classList.add('gallery__discription_active');
             break;
-          case "woodenHousesBlock":
+          case WOODEN_HOUSES_BLOCK:
               const discriptionWooden = document.querySelector('#woodenHouses');
               discriptionWooden.classList.add('gallery__discription_active');
             break;
@@ -245,82 +175,6 @@
       margin-bottom: 40px;
       flex-direction: column;
       justify-content: space-between;
-
-      &__menu{
-        width: 100%;
-        z-index: 9;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .menu{
-        height: auto;
-        background-color: #F0F0F0;
-        box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-        -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-        -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-
-        &__wrapper{
-          width: 69.5%;
-          height: 100%;
-          display: flex;
-          background-color: #ffffff;
-        }
-
-        &__search{
-          width: 30.4%;
-          display: flex;
-          background-color: #ffffff;
-        }
-
-        &__item{
-          width: 20%;
-          height: 100%;
-          margin: auto;
-          cursor: pointer;
-          display: flex;
-        }
-
-        &__item:hover{
-          background-color: #F7F7F7;
-          color: #121212;
-          transform: scale(1.1);
-        }
-
-        &__link{
-          margin: auto;
-          font-size: 1rem;
-          text-transform: uppercase;
-          color: #121212;
-        }
-
-        &__form{
-          display: flex;
-          width: 90%;
-          margin: auto;
-          justify-content: center;
-        }
-
-        &__form>button{
-          border: 0;
-          width: 15%;
-          height: 100%;
-          background-color: #ffffff;
-        }
-
-        &__input{
-          width: 85%;
-        }
-
-        &__input>input{
-          width: 100%;
-          border: 0;
-        }
-        
-        .sandwich{
-          display: none;
-        }
-    }
 
     .gallery{
       display: flex;

@@ -24,9 +24,6 @@
                   <input type="file" name="myFile" ref="file" accept="image/*" @change="photoDownload">
                 </label>
               </div>
-              <!-- <div class="photo__button photo__take">
-                <button @click="photoTake">Фото</button>
-              </div> -->
             </div>
           </div>
           <div class="window__findings findings">
@@ -71,7 +68,6 @@
                 v-model.trim="file.address" />
               </label>
               <span class="error_form" v-if="$v.file.address.$dirty && $v.file.address.$error">не заполнено</span>
-              <!-- <span class="error_form" v-else-if="$v.file.address.$dirty && $v.file.address.">адрес сайта не коректен</span> -->
             </div>
             <div class="findings__buttons">
               <button type="submit" class="btn findings__button">Отправить</button>
@@ -103,7 +99,6 @@ export default {
         content: "",
       },
       consent: true,
-      showVideo: false,
       showPreview: false,
       photoPreview: "",
       file: {
@@ -118,46 +113,6 @@ export default {
   methods: {
     closeWindow: function (){
      this.$emit('closeWindowFeedback');
-    },
-    photoTake: function (){
-      this.showVideo = true;
-
-      let video = document.querySelector('video.camera_stream');
-
-      console.log(video.src);
-
-      navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
-
-      navigator.getUserMedia(
-        {
-          video: true
-        },
-        function(){
-          video.src = window.URL.createObjectURL(stream);
-          // video.src = window.URL.createObjectURL();
-          // console.log(window.URL.createObjectURL(blob));
-        },
-        function(err){
-          console.error(err);
-        }
-      );
-
-      let hidden_canvas = document.querySelector('canvas');
-      // let video = document.querySelector('video.camera_stream');
-      let image = document.querySelector('img.photo');
-
-      let width = video.videoWidth;
-      let height = video.videoHeight;
-      let context = hidden_canvas.getContext('2d');
-
-      hidden_canvas.width = width;
-      hidden_canvas.height = height;
-
-      context.drawImage(video, 0, 0, width, height);
-
-      var imageDataURL = hidden_canvas.toDataURL('image/png');
-
-      // image.setAttribute('src', imageDataURL);
     },
     photoDownload: function (){
 
