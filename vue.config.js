@@ -1,11 +1,11 @@
 module.exports = {
   // lintOnSave: false,
   pages: {
-    'ingex': {
+    'index': {
       entry: './src/main.js',
       template: 'public/index.html',
       title: 'home',
-      chunks: [ 'chunk-vendors', 'chunk-common', 'ingex']
+      chunks: [ 'chunk-vendors', 'chunk-common', 'index']
     },
     // 'course': {
     //   entry: './src/course/main.js',

@@ -11,12 +11,12 @@
         <h2 click="promis">Моё портфолио</h2>
       </div>
       <div class="info__text">
-        <p>Здесь можно посмотреть мои работы. Лендинги, многостраничные сайты и небольшие приложения.</p>
+        <p>Здесь можно посмотреть примеры мох работ.</p>
       </div>
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/course/index.html" class="gallery__link" target="_blank">
+        <a href="www.tutoring-courses.online" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_8.png" alt="courses">
         
           <div class="gallery__discription" id="courses">
@@ -96,29 +96,35 @@
         const WOODEN_HOUSES_BLOCK = "woodenHousesBlock";
 
         switch (galleryBlock.id) {
-          case COURSES_BLOCK:
+          case COURSES_BLOCK: {
               const discriptionCourses = document.querySelector('#courses');
               discriptionCourses.classList.add('gallery__discription_active');
+              }
             break;
-          case WOODEN_HOUSES_BLOCK:
+          case WOODEN_HOUSES_BLOCK: {
               const discriptionWooden = document.querySelector('#woodenHouses');
               discriptionWooden.classList.add('gallery__discription_active');
+              }
             break;
-          case "muscovitesBlock":
+          case "muscovitesBlock": {
               const discriptionMuscovites = document.querySelector('#muscovites');
               discriptionMuscovites.classList.add('gallery__discription_active');
+              }
           break;
-          case "quizizzBlock":
+          case "quizizzBlock": {
               const discriptionQuizizz = document.querySelector('#quizizz');
               discriptionQuizizz.classList.add('gallery__discription_active');
+              }
           break;
-          case "greetingsBlock":
+          case "greetingsBlock": {
               const discriptionGreetings = document.querySelector('#greetings');
               discriptionGreetings.classList.add('gallery__discription_active');
+              }
           break;
-          case "bredliBlock":
+          case "bredliBlock": {
               const discriptionBredli = document.querySelector('#bredli');
               discriptionBredli.classList.add('gallery__discription_active');
+              }
           break;
         
           default:
@@ -130,29 +136,35 @@
         console.log(galleryBlock);
 
         switch (galleryBlock.id) {
-          case "coursesBlock":
+          case "coursesBlock": {
               const discriptionCourses = document.querySelector('#courses');
               discriptionCourses.classList.remove('gallery__discription_active');
+              }
             break;
-          case "woodenHousesBlock":
+          case "woodenHousesBlock": {
               const discriptionWooden = document.querySelector('#woodenHouses');
               discriptionWooden.classList.remove('gallery__discription_active');
+              }
             break;
-          case "muscovitesBlock":
+          case "muscovitesBlock": {
               const discriptionMuscovites = document.querySelector('#muscovites');
               discriptionMuscovites.classList.remove('gallery__discription_active');
+              }
           break;
-          case "quizizzBlock":
+          case "quizizzBlock": {
               const discriptionQuizizz = document.querySelector('#quizizz');
               discriptionQuizizz.classList.remove('gallery__discription_active');
+              }
           break;
-          case "greetingsBlock":
+          case "greetingsBlock": {
               const discriptionGreetings = document.querySelector('#greetings');
               discriptionGreetings.classList.remove('gallery__discription_active');
+              }
           break;
-          case "bredliBlock":
+          case "bredliBlock": {
               const discriptionBredli = document.querySelector('#bredli');
               discriptionBredli.classList.remove('gallery__discription_active');
+              }
           break;
         
           default:

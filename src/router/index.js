@@ -13,7 +13,7 @@ const router = new VueRouter({
   {
     path: '*',
     component: Home
-  },
+  }
 ],
   mode: 'history',
   base: process.env.BASE_URL,
