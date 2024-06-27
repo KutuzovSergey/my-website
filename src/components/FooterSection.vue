@@ -6,7 +6,7 @@
       </div>
       <div class="footer__link">
         <a href="#upward">
-          <img src="@/assets/icon/arrow_top.svg" alt="">
+          <img src="@/assets/icon/arrow_top.svg" alt="#">
         </a>
      </div>
     </div>

@@ -133,7 +133,6 @@ export default {
           reader.readAsDataURL( this.file.fileImage );
         }
       }
-      // console.log(e.target.files[0]);
     },
     sendForm: function (){
       if (this.$v.$invalid) {

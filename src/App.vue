@@ -7,16 +7,6 @@
 <script>
   export default {
     name: 'App',
-    components: {
-    },
-    data(){
-      return {
-      }
-    },
-    methods: {
-    },
-    mounted() {
-    }
   }
 </script>
 
@@ -209,31 +199,31 @@ button:focus{
     background-color: #2F302B;
     border: 1px solid #2196F3;
     
-    .cod__symbol{
+    &__symbol{
       @include cod(#ffffff, 700, 1.1rem);
     }
-    .cod__tag{
+    &__tag{
       @include cod(#57BA14, 800, 1.1rem);
     }
-    .cod__atribute{
+    &__atribute{
       @include cod(#DC971F, 600, 1.1rem);
     }
-    .cod__atribute_value{
+    &__atribute_value{
       @include cod(#E6DB74, 500, 1.1rem);
     }
-    .cod__CSSselector{
+    &__CSSselector{
       @include cod(#EB2355, 600, 1.1rem);
     }
-    .cod__CSSproperty{
+    &__CSSproperty{
       @include cod(#1CC9BB, 700, 1.1rem);
     }
-    .cod__CSSvalue{
+    &__CSSvalue{
       @include cod(#8381D1, 500, 1.1rem);
     }
-    .cod__indent-1{
+    &__indent-1{
       margin-left: 40px;
     }
-    .cod__indent-2{
+    &__indent-2{
       margin-left: 80px;
     }
   }
@@ -299,35 +289,34 @@ button:focus{
     .cod{
       padding: 20px;
       margin: 10px 0;
-      /*overflow: auto;*/
       background-color: #2F302B;
       border: 1px solid #2196F3;
       
-      .cod__symbol{
+      &__symbol{
         @include cod(#ffffff, 700, 1.1rem);
       }
-      .cod__tag{
+      &__tag{
         @include cod(#57BA14, 800, 1.1rem);
       }
-      .cod__atribute{
+      &__atribute{
         @include cod(#DC971F, 600, 1.1rem);
       }
-      .cod__atribute_value{
+      &__atribute_value{
         @include cod(#E6DB74, 500, 1.1rem);
       }
-      .cod__CSSselector{
+      &__CSSselector{
         @include cod(#EB2355, 600, 1.1rem);
       }
-      .cod__CSSproperty{
+      &__CSSproperty{
         @include cod(#1CC9BB, 700, 1.1rem);
       }
-      .cod__CSSvalue{
+      &__CSSvalue{
         @include cod(#8381D1, 500, 1.1rem);
       }
-      .cod__indent-1{
+      &__indent-1{
         margin-left: 40px;
       }
-      .cod__indent-2{
+      &__indent-2{
         margin-left: 80px;
       }
     }
@@ -389,31 +378,31 @@ button:focus{
     }
     .cod{
       
-      .cod__symbol{
+      &__symbol{
         font-size: 0.9rem;
       }
-      .cod__tag{
+      &__tag{
         font-size: 0.9rem;
       }
-      .cod__atribute{
+      &__atribute{
         font-size: 0.9rem;
       }
-      .cod__atribute_value{
+      &__atribute_value{
         font-size: 0.9rem;
       }
-      .cod__CSSselector{
+      &__CSSselector{
         font-size: 0.9rem;
       }
-      .cod__CSSproperty{
+      &__CSSproperty{
         font-size: 0.9rem;
       }
-      .cod__CSSvalue{
+      &__CSSvalue{
         font-size: 0.9rem;
       }
-      .cod__indent-1{
+      &__indent-1{
         margin-left: 20px;
       }
-      .cod__indent-2{
+      &__indent-2{
         margin-left: 40px;
       }
     }

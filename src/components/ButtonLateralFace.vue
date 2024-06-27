@@ -54,7 +54,7 @@ export default {
     display: none;
   }
   
-  @media (max-width: 1140px){
+  @media (max-width: 1678px){
     .side{
       transition: all 0.9s ease 0s;
       top: 30%;
@@ -106,6 +106,8 @@ export default {
       border-right: 6px solid #EE534F;
     }
   }
+
+  /* @media (max-width: 1140px){} */
   @media (max-width: 410px){
     .side-activ{
       left: 300px;

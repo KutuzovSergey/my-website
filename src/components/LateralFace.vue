@@ -16,20 +16,20 @@
     </div>
     <div class="sidebar__bottom">
       <div class="sidebar__network network">
-        <div class="network__block">
+        <!-- <div class="network__block">
           <a href="https://www.facebook.com/sergey.def.5" class="network__img">
-            <img src="@/assets/icon/social_networks/facebook.svg" alt="" />
+            <img src="@/assets/icon/social_networks/facebook.svg" alt="#" />
           </a>
           <a href="" class="network__img">
-            <img src="@/assets/icon/social_networks/instagram.svg" alt="" />
+            <img src="@/assets/icon/social_networks/instagram.svg" alt="#" />
           </a>
           <a href="" class="network__img">
-            <img src="@/assets/icon/social_networks/twitter.svg" alt="" />
+            <img src="@/assets/icon/social_networks/twitter.svg" alt="#" />
           </a>
           <a href="" class="network__img">
-            <img src="@/assets/icon/social_networks/wk.svg" alt="" />
+            <img src="@/assets/icon/social_networks/wk.svg" alt="#" />
           </a>
-        </div>
+        </div> -->
       </div>
       <div class="sidebar__myself">
         <div class="myself">
@@ -43,14 +43,22 @@
       </div>
       <div class="sidebar__summary">
         <div class="summary">
-        <a href="summary/Kutuzov_S._S._.pdf" class="summary__link">
-          <button type="button" class="btn summary__button">
-            <div class="summary__button__icon">
-              <img src="@/assets/icon/download.svg" alt="" >
-            </div>
-            <span>Download</span>
-          </button>
-        </a>
+          <a href="http://www.s-sta.online/summary/KutuzovSergey.html" class="summary__link">
+            <button type="button" download class="btn summary__button">
+              <div class="summary__button__icon">
+                <img src="@/assets/icon/download.svg" alt="#" >
+              </div>
+              <span>Просмотр</span>
+            </button>
+          </a>
+          <a href="http://www.s-sta.online/summary/KutuzovSergey.html" class="summary__link">
+            <button type="button" download class="btn summary__button">
+              <div class="summary__button__icon">
+                <img src="@/assets/icon/download.svg" alt="#" >
+              </div>
+              <span>Скачать</span>
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -260,12 +268,15 @@ export default {
   width: 99%;
   height: 140px;
   display: flex;
+  justify-content: space-between;
   background-color: #151515;
 
   &__link{
-    width: 50%;
+    display: block;
+    width: 48%;
     height: 40%;
     margin: auto;
+    text-decoration: none;
   }
 
   &__button{
@@ -293,7 +304,7 @@ export default {
   }
 }
 
-@media (max-width: 1140px){
+@media (max-width: 1678px){
   .sidebar{
     width: 310px;
     height: 100%;
@@ -321,6 +332,15 @@ export default {
 
   .summary{
     height: 100%;
+      
+    &__link{
+      width: 70%;
+      height: 32%;
+    }
+  }
+}
+@media (max-width: 1140px){
+  .summary{
       
     &__link{
       width: 80%;

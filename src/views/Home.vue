@@ -193,21 +193,27 @@ export default {
 }
 
 @media (max-width: 1678px){
-  .content{
-      width: 90%;
-    }
   .lateral{
     position: absolute;
     z-index: -1;
+    display: block;
+    left: -310px;
   }
-}
+  .lateral-adaptiv{
+    display: block;
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+  }
+  #lateral{
+    transition: all 0.9s ease 0s;
+  }
 
-@media (max-width: 1678px){
   .content{
-    width: 90%;
+    width: 100%;
   }
   .menu-additional_activ{
-    width: 90%;
+    width: 100%;
   }
   .menu-additional{
     right: 5%;
@@ -218,25 +224,7 @@ export default {
   .menu-additional{
     display: none;
   }
-}
 
-@media (max-width: 967px){
-  .content{
-    width: 94%;
-  }
-}
-
-@media (max-width: 1140px){
-  .lateral-adaptiv{
-    display: block;
-    z-index: 99999;
-    position: fixed;
-    left: 0;
-  }
-  .lateral{
-    display: block;
-    left: -310px;
-  }
   #lateral{
     transition: all 0.9s ease 0s;
   }

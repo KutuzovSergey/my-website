@@ -16,7 +16,7 @@
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="www.tutoring-courses.online" class="gallery__link" target="_blank">
+        <a href="http://www.s-sta.online.tutoring-courses.s-sta.online" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_8.png" alt="courses">
         
           <div class="gallery__discription" id="courses">
@@ -45,14 +45,14 @@
       <div class="gallery__block landing" id="quizizzBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
         <a href="/myWork/quiz/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="quizizz">
+        
+          <div class="gallery__discription" id="quizizz">
+            <span>лендинг. квиз</span>
+          </div>
         </a>
-
-        <div class="gallery__discription" id="quizizz">
-          <span>лендинг. квиз</span>
-        </div>
       </div>
       <div class="gallery__block landing" id="greetingsBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/email/index.html" target="_blank" class="gallery__link">
+        <a href="/myWork/email/happy_new_year/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/3.png" alt="New Year's greetings">
         
           <div class="gallery__discription" id="greetings">
@@ -133,7 +133,6 @@
       },
       hidingDescription: function (event) {
         const galleryBlock = event.target;
-        console.log(galleryBlock);
 
         switch (galleryBlock.id) {
           case "coursesBlock": {
