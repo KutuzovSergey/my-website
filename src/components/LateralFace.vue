@@ -9,8 +9,7 @@
           <h2>Sergey Def</h2>
         </div>
         <div class="logo__text">
-          <span>Website and app </span>
-          <a>development</a>
+          <span>Website and app development</span>
         </div>
       </div>
     </div>
@@ -43,21 +42,11 @@
       </div>
       <div class="sidebar__summary">
         <div class="summary">
-          <a href="http://www.s-sta.online/summary/KutuzovSergey.html" class="summary__link">
-            <button type="button" download class="btn summary__button">
+          <a href="http://www.s-sta.online/summary/КутузовСергей.pdf" download class="summary__link btn summary__button">
               <div class="summary__button__icon">
                 <img src="@/assets/icon/download.svg" alt="#" >
               </div>
-              <span>Просмотр</span>
-            </button>
-          </a>
-          <a href="http://www.s-sta.online/summary/KutuzovSergey.html" class="summary__link">
-            <button type="button" download class="btn summary__button">
-              <div class="summary__button__icon">
-                <img src="@/assets/icon/download.svg" alt="#" >
-              </div>
-              <span>Скачать</span>
-            </button>
+              <span>резюме</span>
           </a>
         </div>
       </div>

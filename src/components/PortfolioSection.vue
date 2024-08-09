@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio" id="portfolio">
+  <section class="portfolio" id="portfolio" ref="sectionPortfolio">
     <a name="portfolio" class="myLink"></a>
     <HeaderDecorative :text='headerComponent' />
     <div class="portfolio__info info">
@@ -51,7 +51,14 @@
           </div>
         </a>
       </div>
-      <div class="gallery__block landing" id="greetingsBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
+
+      <div 
+        class="gallery__block landing" 
+        id="greetingsBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription" 
+        v-show="showPortfolio">
+
         <a href="/myWork/email/happy_new_year/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/3.png" alt="New Year's greetings">
         
@@ -60,7 +67,14 @@
           </div>
         </a>
       </div>
-      <div class="gallery__block landing" id="bredliBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
+
+      <div 
+        class="gallery__block landing" 
+        id="bredliBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription" 
+        v-show="showPortfolio">
+
         <a href="/myWork/bredli/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/4.png" alt="bredli">
 
@@ -69,12 +83,52 @@
           </div>
         </a>
       </div>
+
+      <div 
+        class="gallery__block landing" 
+        id="bredliBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription" 
+        v-show="showPortfolio">
+
+        <a href="/myWork/tatuNataley/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/6.png" alt="bredli">
+      
+          <div class="gallery__discription" id="bredli">
+            <span>многостраничный сайт. тату мастер</span>
+          </div>
+        </a>
+      </div>
+
+      <div 
+        class="gallery__block landing" 
+        id="bredliBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription" 
+        v-show="showPortfolio">
+
+        <a href="/myWork/zeus/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/5.png" alt="bredli">
+      
+          <div class="gallery__discription" id="bredli">
+            <span>сайт-везитка, лендинг. продажа </span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="portfolio__link" @click="showFullPortfolio" v-show="!showPortfolio">
+      <span>смотреть больше</span>
+    </div>
+    <div class="portfolio__link" @click="hideFullPortfolio" v-show="showPortfolio">
+      <span>скрыть</span>
     </div>
   </section>
 </template>
 
 <script>
   import HeaderDecorative from '@/components/HeaderComponents/HeaderDecorative.vue'
+  import { ref } from 'vue'
 
   export default {
     name: 'PortfolioSection',
@@ -87,7 +141,14 @@
     data() {
       return {
         headerComponent: 'Моё портфолио',
+        showPortfolio: false,
       };
+    },
+    setup(){
+      const sectionPortfolio = ref(null);
+      return {
+        sectionPortfolio
+      }
     },
     methods: {
       showingDescription: function (event){
@@ -169,7 +230,13 @@
           default:
             break;
         }
-      }
+      },
+      showFullPortfolio: function () {
+        this.showPortfolio = true;
+      },
+      hideFullPortfolio: function () {
+        this.showPortfolio = false;
+      },
     }
   }
 </script>
@@ -180,7 +247,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
   .portfolio{
-    @include blockMain(90%, 800px);
+    @include blockMain(90%, auto);
       position: relative;
       padding: 4% 6%;
       margin-bottom: 40px;
@@ -195,7 +262,7 @@
       
       &__block{
         position: relative;
-        width: 33.33%;
+        width: 50%;
         height: auto;
         border: 1px solid #000;
         overflow: hidden;
@@ -246,7 +313,7 @@
       &__link{
         display: block;
         width: 100%;
-        height: 250px;
+        height: 360px;
         overflow: hidden;
         cursor: pointer;
       }
@@ -271,20 +338,33 @@
       margin: auto;
     }
 
+    &__link{
+      @include buttonMain(260px, 100%, 1rem);
+      margin: 50px auto 0 auto;
+    }
+
+    &__link>span{
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
     &__button-button{
       @include buttonMain(100%, 100%, 1rem);
     }
   }
 
+  .full_portfolio{
+    height: 830px;
+  }
+
   @media (max-width: 1280px){
     .portfolio{
-      height: 650px;
 
       .gallery{
           
-        &__link{
-          height: 200px;
-        }
+      &__link{
+        height: 320px;
+      }
 
       }
       &__button__link{
@@ -295,7 +375,6 @@
 
   @media (max-width: 967px){
       .portfolio{
-        height: 700px;
 
         .menu{
           position: relative;
@@ -348,7 +427,7 @@
         }
         
         &__link{
-          height: 150px;
+          height: 280px;
         }
       }
 
@@ -362,13 +441,12 @@
     @media (max-width: 600px){
     .portfolio{
       width: 100%;
-      height: 660px;
+      height: 690px;
     }
   }
 
   @media (max-width: 480px){
     .portfolio{
-      height: 1450px;
 
       .gallery{
         flex-direction: column;
@@ -378,7 +456,7 @@
         }
 
         &__link {
-            height: 210px;
+            height: 260px;
         }
       }
     }
