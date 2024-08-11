@@ -53,7 +53,7 @@
       </div>
 
       <div 
-        class="gallery__block landing" 
+        class="gallery__block gallery__block-hidden landing" 
         id="greetingsBlock" 
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription" 
@@ -69,7 +69,7 @@
       </div>
 
       <div 
-        class="gallery__block landing" 
+        class="gallery__block gallery__block-hidden landing" 
         id="bredliBlock" 
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription" 
@@ -86,32 +86,32 @@
 
       <div 
         class="gallery__block landing" 
-        id="bredliBlock" 
+        id="tattooBlock" 
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription" 
         v-show="showPortfolio">
 
         <a href="/myWork/tatuNataley/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/6.png" alt="bredli">
+          <img src="@/assets/portfolio/6.png" alt="tattoo artist">
       
-          <div class="gallery__discription" id="bredli">
-            <span>многостраничный сайт. тату мастер</span>
+          <div class="gallery__discription" id="tattoo">
+            <span>многостраничный сайт тату мастера</span>
           </div>
         </a>
       </div>
 
       <div 
         class="gallery__block landing" 
-        id="bredliBlock" 
+        id="zeusBlock" 
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription" 
         v-show="showPortfolio">
 
         <a href="/myWork/zeus/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/5.png" alt="bredli">
+          <img src="@/assets/portfolio/5.png" alt="zeus3000">
       
-          <div class="gallery__discription" id="bredli">
-            <span>сайт-везитка, лендинг. продажа </span>
+          <div class="gallery__discription" id="zeus">
+            <span>сайт-везитка, лендинг для продажи zeus3000</span>
           </div>
         </a>
       </div>
@@ -187,6 +187,16 @@
               discriptionBredli.classList.add('gallery__discription_active');
               }
           break;
+          case "tattooBlock": {
+              const discriptionTattoo = document.querySelector('#tattoo');
+              discriptionTattoo.classList.add('gallery__discription_active');
+            }
+          break;
+          case "zeusBlock": {
+              const discriptionZeus = document.querySelector('#zeus');
+              discriptionZeus.classList.add('gallery__discription_active');
+            }
+          break;
         
           default:
             break;
@@ -226,6 +236,16 @@
               discriptionBredli.classList.remove('gallery__discription_active');
               }
           break;
+          case "tattooBlock": {
+              const discriptionGreetings = document.querySelector('#tattoo');
+              discriptionGreetings.classList.remove('gallery__discription_active');
+            }
+            break;
+          case "zeusBlock": {
+              const discriptionZeus = document.querySelector('#zeus');
+              discriptionZeus.classList.remove('gallery__discription_active');
+            }
+            break;
         
           default:
             break;
@@ -236,6 +256,11 @@
       },
       hideFullPortfolio: function () {
         this.showPortfolio = false;
+        window.scrollTo({
+          top: 2600,
+          left: 0,
+          behavior: "smooth",
+        });
       },
     }
   }
@@ -306,7 +331,7 @@
       }
 
       &__discription_active>span{
-        font-size: 1rem;
+        font-size: 1.4rem;
       }
 
 
@@ -441,7 +466,6 @@
     @media (max-width: 600px){
     .portfolio{
       width: 100%;
-      height: 690px;
     }
   }
 
