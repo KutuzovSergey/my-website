@@ -79,7 +79,7 @@ export default {
       left: 0;
     }
     .side-activ{
-      left: 310px;
+      left: 410px;
     }
     .side__text{
       margin: auto 0;
@@ -104,6 +104,12 @@ export default {
       transform: rotate(45deg);
       border-top: 6px solid #EE534F;
       border-right: 6px solid #EE534F;
+    }
+  }
+
+   @media (max-width: 500px){
+    .side-activ{
+      left: 360px;
     }
   }
 

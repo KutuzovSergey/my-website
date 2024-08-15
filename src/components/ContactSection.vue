@@ -194,7 +194,7 @@ export default {
   @import '~bootstrap/dist/css/bootstrap.min.css';
 
   .contact{
-		@include blockMain(90%, 900px);
+		@include blockMain(100%, 900px);
 			position: relative;
 			padding: 4% 6%;
       margin-bottom: 40px;

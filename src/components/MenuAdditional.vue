@@ -93,10 +93,6 @@ export default {
 @import '@/scss/style.scss';
 @import '@/scss/_mixins.scss';
 
-.menu__additional{
-  padding: 10px 5px;
-}
-
 .menu-active{
   position: fixed;
   width: 77%;
@@ -104,7 +100,7 @@ export default {
   display: flex;
   top: 10px;
   z-index: 9999999;
-  background-color: #fff;
+  // background-color: #777474;
 }
 
 .menu{
@@ -118,14 +114,14 @@ export default {
   }
 
   &__item{
-    width: 11%;
+    width: 20%;
     height: 100%;
     margin: auto;
     cursor: pointer;
   }
 
   &__item:hover{
-    background-color: #F7F7F7;
+    background-color: #151515;
     transform: scale(1.1);
   }
 
@@ -138,7 +134,11 @@ export default {
 
   &__item>a>span{
     margin: auto;
-    color: #121212;
+    color: #F7F7F7;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   &__block_activ{

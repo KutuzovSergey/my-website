@@ -26,7 +26,7 @@ export default {
 @import '@/scss/_mixins.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .footer{
-    @include blockMain(90%, 60px);
+    @include blockMain(100%, 60px);
     position: relative;
 
     &__wrapper{

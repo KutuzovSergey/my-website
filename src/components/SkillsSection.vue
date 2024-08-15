@@ -283,7 +283,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .skills{
-    @include blockMain(90%, 1000px);
+    @include blockMain(100%, 1000px);
     position: relative;
     padding: 4% 6%;
     flex-direction: column;

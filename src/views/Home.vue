@@ -171,11 +171,16 @@ export default {
   display: flex;
   top: 10px;
   z-index: 9999999;
-  background-color: #fff;
+  background-color: #000000;
+  box-shadow: 0px 0px 10px 5px #3F51B5;
+  /* -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+  -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21); */
+
 }
 
 .menu-additional{
   position: fixed;
+  padding: 10px 5px;
   width: 50px;
   height: 50px;
   right: 1%;

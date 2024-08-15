@@ -138,7 +138,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet"');
 
   .aboutMe{
-    @include blockMain(90%, 1100px);
+    @include blockMain(100%, 1100px);
     flex-direction: column;
     position: relative;
     padding: 4% 6%;

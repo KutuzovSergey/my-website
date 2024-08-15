@@ -110,7 +110,7 @@ export default {
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
   .about{
-     @include blockMain(90%, 500px);
+     @include blockMain(100%, 500px);
      margin-bottom: 40px;
 
      &__slide{

@@ -272,7 +272,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
   .portfolio{
-    @include blockMain(90%, auto);
+    @include blockMain(100%, auto);
       position: relative;
       padding: 4% 6%;
       margin-bottom: 40px;
@@ -452,7 +452,7 @@
         }
         
         &__link{
-          height: 280px;
+          height: 190px;
         }
       }
 
@@ -463,7 +463,17 @@
     }
   }
 
-    @media (max-width: 600px){
+  @media (max-width: 700px){
+    .portfolio{
+      .gallery{
+        &__link{
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px){
     .portfolio{
       width: 100%;
     }

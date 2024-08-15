@@ -76,9 +76,11 @@ export default {
     width: 100%;
     height: auto;
   }
+
   &__bottom-home{
     height: 96%;
   }
+
   &__network{
     width: 100%;
     height: 60px;
@@ -95,16 +97,15 @@ export default {
   
   &__summary{
     width: 100%;
-    height: 96.3%;
+    height: 90px;
     background-color: #151515;
     margin-top: 1%;
-
   }
 }
 
 .logo{
     width: 100%;
-    height: 360px;
+    height: auto;
 
     &__img{
       width: 100%;
@@ -128,15 +129,27 @@ export default {
       background-color: #000000;
     }
 
+    &__title{
+      height: 100px;
+      padding: 0;
+      background-color: #151515;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     &__title>h2{
       font-family: 'Nanum Pen Script', cursive;
       font-size: 2rem;
     }
 
     &__text{
-      width: 100%;
-      padding-top: 4%;
-      text-align: center;
+      height: 80px;
+      padding: 0;
+      background-color: #151515;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &__text>span{
@@ -151,8 +164,40 @@ export default {
     }
 }
 
+@media (min-width: 1900px){
+  .logo{
+    &__img{
+      height: 65%;
+    }
+  }
+}
+
+@media (min-width: 2250px){
+  .logo{
+    &__img{
+      height: 80%;
+    }
+  }
+}
+
+@media (min-width: 2600px){
+  .logo{
+    &__img{
+      height: 90%;
+    }
+  }
+}
+
+@media (min-width: 3000px){
+  .logo{
+    &__img{
+      height: 100%;
+    }
+  }
+}
+
 .network{
-    display: flex;
+    display: none;
     justify-content: center;
     background-color: #151515;
 
@@ -232,12 +277,12 @@ export default {
 
 .myself{
     width: 100%;
-    height: 80%;
+    height: auto;
     margin: auto;
 
     &__title{
       width: 100%;
-      height: 25%;
+      height: 50px;
       display: flex;
     }
 
@@ -245,6 +290,7 @@ export default {
       @include headingMin(1rem, 700);
       margin: auto;
     }
+
     &__text{
       width: 100%;
       text-align: left;
@@ -262,14 +308,14 @@ export default {
 
   &__link{
     display: block;
-    width: 48%;
-    height: 40%;
+    width: 100%;
+    height: 100%;
     margin: auto;
     text-decoration: none;
   }
 
   &__button{
-      @include buttonMain(100%, 100%, 1rem);
+      @include buttonMain(240px, 60px, 1rem);
       letter-spacing: 0.1em;
       display: flex;
       align-items: center;
@@ -295,7 +341,7 @@ export default {
 
 @media (max-width: 1678px){
   .sidebar{
-    width: 310px;
+    width: 410px;
     height: 100%;
 
     &__bottom{
@@ -307,7 +353,7 @@ export default {
     }
 
     &__myself{
-      height: 40%;
+      height: auto;
     }
 
     &__summary{
@@ -315,31 +361,145 @@ export default {
     }
   }
 
+  .myself{
+    height: 200px;
+  }
+
   .logo{
-    height: 300px;
+    height: auto;
+
+    &__content{
+      padding-top: 5%;
+    }
+
+    &__text{
+      padding: 0;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .summary{
     height: 100%;
       
     &__link{
-      width: 70%;
+      width: 60%;
       height: 32%;
     }
   }
 }
+
 @media (max-width: 1140px){
-  .summary{
-      
-    &__link{
-      width: 80%;
-      height: 42%;
+  .sidebar{
+    overflow: scroll;
+
+    &__bottom{
+      height: 550px;
     }
+
+    &__network{
+      display: none;
+    }
+
+    &__myself{
+      height: auto;
+    }
+
+    &__summary{
+      height: 100px;
+    }
+  }
+
+  .myself{
+    height: 300px;
+    margin: 0;
+
+    &__title{
+      height: 100px;
+    }
+
+    &__text{
+      height: 140px;
+      background-color: #151515;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__text>p{
+      margin: 0;
+      text-align: center;
+    }
+  }
+  .logo{
+    &__img{
+      height: 250px;
+    }
+    &__content{
+      height: auto;
+      padding: 0;
+    }
+
+    &__title{
+      background-color: #000000;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+
+    &__title>h2{
+      margin: 0;
+    }
+
+    &__text{
+      height: 60px;
+      padding: 0;
+      background-color: #151515;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+  }
+  .summary{
+    height: 130px;
+
+    &__link{
+      width: 210px;
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .logo{
+    &__img{
+      height: 200px;
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .sidebar{
+    width: 350px;
   }
 }
 @media (max-width: 410px){
   .sidebar{
     width: 300px;
+  }
+
+  .logo{
+    &__img{
+      height: 180px;
+    }
+  }
+  .myself{
+    &__text{
+      height: 150px;
+    }
   }
 }
 
@@ -352,7 +512,6 @@ export default {
 
     &__link{
       width: 70%;
-      height: 56%;
     }
   } 
   
