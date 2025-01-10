@@ -22,6 +22,7 @@
       <ScrollIndicatorLine />
       <MessageUser v-if="$store.getters.CHANGE_LED" />
     </div>
+    <Snow />
   </div>
 </template>
 
@@ -43,6 +44,8 @@ import ScrollIndicatorCircle from '@/components/ScrollIndicatorCircle.vue'
 import ScrollIndicatorLine from '@/components/ScrollIndicatorLine.vue'
 import MessageUser from '@/components/MessageUser.vue'
 
+import Snow from '@/components/Snow.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -61,6 +64,7 @@ export default {
     ScrollIndicatorCircle,
     ScrollIndicatorLine,
     MessageUser,
+    Snow,
   },
   data(){
     return {

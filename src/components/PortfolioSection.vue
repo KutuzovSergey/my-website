@@ -79,7 +79,7 @@
           <img src="@/assets/portfolio/4.png" alt="bredli">
 
           <div class="gallery__discription" id="bredli">
-            <span>сайт-везитка, лендинг. компания по установке охранных систем bredli</span>
+            <span>сайт-визитка, лендинг. компания по установке охранных систем bredli</span>
           </div>
         </a>
       </div>
@@ -111,7 +111,7 @@
           <img src="@/assets/portfolio/5.png" alt="zeus3000">
       
           <div class="gallery__discription" id="zeus">
-            <span>сайт-везитка, лендинг для продажи zeus3000</span>
+            <span>сайт-визитка, лендинг для продажи zeus3000</span>
           </div>
         </a>
       </div>
