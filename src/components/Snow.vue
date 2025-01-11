@@ -4,15 +4,21 @@
     <div class="snow-parameters">
       <div class="snow-parameters__titel">
         <span>управление снегом</span>
+        <div class="snow-parameters__open"></div>
+        
       </div>
       
-      <div class="snow-parameters__remove">
-        <input type="checkbox" id="switch" class="snow-parameters__switch" v-model="snowConditions" />
-        <label for="switch" class="snow-parameters__switch-description">
-        </label>
+      <div class="snow-parameters__remove-wrapper">
+        <div class="snow-parameters__remove">
+          <input type="checkbox" id="switch" class="snow-parameters__switch" v-model="snowConditions" />
+          <label for="switch" class="snow-parameters__switch-description">
+          </label>
+        </div>
+        <div class="snow-parameters__text">
+          <span>включить/выключить</span>
+        </div>
+        
       </div>
-      
-      
     </div>
     <!-- <span class='snowflake' style='position:absolute;top:10px;'>
       <img src='@/assets/snow/snowflake1.png' alt='#'>
@@ -28,130 +34,118 @@ export default {
   },
   data(){
     return {
+      x_mv: [],
+      crds: [],
+      lftrght: [],
+      snowMax: 100,
+      snowLocal: [],
+      snowMaxSize: 30,
+      actualMarginBottom: 0,
       snowConditions: false,
     }
   },
   methods: {
-    randommaker_1: function () {
-      console.log('hi')
-    }
-  },
-  watch: {
-    snowConditions: function () {
-      console.log(this.snowConditions);
-      if (this.snowConditions) {
-        const snowflakes = document.querySelectorAll('div.snow-block > span');
-        console.log(snowflakes);
+    randommaker: function (range) {
+      return Math.floor(range * Math.random())
+    },
+    initsnow: function () {
+      let sinkSpeed = 0.5;
+      let snowminsize = 8;
+      let marginBottom = 0;
+      const browserinfos = navigator.userAgent;
+      const opera = browserinfos.match(/Opera/);
+      const ns6 = document.getElementById && !document.all;
+      const marginRight = this.$refs.snowflake_block.offsetWidth;
+      const ie5 = document.all && document.getElementById && !browserinfos.match(/Opera/);
+      const snowflakes = new Array('snowflake1.png', 'snowflake2.png', 'snowflake3.png');
 
-        for (let i = 0; i <= snowflakes.length; i++) {
-          // console.log(snowflakes[i]);
-          snowflakes[i].remove();
-        }
-      }
-      // else if (!this.snowConditions) {
-        
-      // }
-    }
-  },
-  mounted() {
-    const snowmax = 100;
-    // const snowtype = new Array("Arial Black", "Arial Narrow", "Times", "Comic Sans MS");
-    const snowflakes = new Array('snowflake1.png', 'snowflake2.png', 'snowflake3.png');
-    //Скорость
-    let sinkspeed = 0.5;
-    //Максимальный размер снежинок
-    let snowmaxsize = 30;
-    //Минимальный размер снежинок
-    let snowminsize = 8;
-
-    const snowLocal = new Array();
-    let marginbottom = this.$refs.snowflake_block.offsetHeight;
-    let marginright = this.$refs.snowflake_block.offsetWidth;
-    // var timer;
-    // var i_snow=0;
-    const x_mv = new Array();
-    const crds = new Array();
-    const lftrght = new Array();
-    const browserinfos=navigator.userAgent;
-    const ie5 = document.all&&document.getElementById&&!browserinfos.match(/Opera/);
-    const ns6 = document.getElementById&&!document.all;
-    const opera = browserinfos.match(/Opera/);
-
-    this.randommaker_1();
-
-    function randommaker(range) {
-      const rand = Math.floor(range * Math.random());
-      return rand;
-    }
-    
-    function initsnow() {
-      
+      // console.log(marginBottom);
       if (ie5 || opera) {
-        marginbottom = document.body.clientHeight;
-        // marginright = document.body.clientWidth;
+        marginBottom = document.body.clientHeight;
+        // this.marginRight = document.body.clientWidth;
       }
       else if (ns6) {
-        marginbottom = window.innerHeight;
-        // marginright = window.innerWidth;
+        marginBottom = window.innerHeight;
+        // this.marginRight = window.innerWidth;
       }
       
-      let snowsizerange = snowmaxsize - snowminsize;
-      
-      for (let i = 0; i <= snowmax; i++) {
-        crds[i] = 0;
-        lftrght[i] = Math.random() * 15;
+      let snowsizerange = this.snowMaxSize - snowminsize;
+
+      // console.log(marginBottom);
+      this.actualMarginBottom = marginBottom;
+      for (let i = 0; i <= this.snowMax; i++) {
+        this.crds[i] = 0;
+        this.lftrght[i] = Math.random() * 15;
         
-        x_mv[i] = 0.03 + Math.random() / 10;
-        snowLocal[i] = document.getElementById("s" + i);
+        this.x_mv[i] = 0.03 + Math.random() / 10;
+        this.snowLocal[i] = document.getElementById("s" + i);
 
         // snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)];
-        snowLocal[i].size = randommaker(snowsizerange) + snowminsize;
+        this.snowLocal[i].size = this.randommaker(snowsizerange) + snowminsize;
         // const snowflakeSize = randommaker(snowsizerange) + snowminsize;
         // console.log(`${snowflakeSize}px`);
 
-        snowLocal[i].sink=sinkspeed*snowLocal[i].size/5;
-        snowLocal[i].posx=randommaker(marginright-snowLocal[i].size);
-        snowLocal[i].posy=randommaker(2*marginbottom-marginbottom-2*snowLocal[i].size);
-        snowLocal[i].style.left = `${snowLocal[i].posx}px`;
-        snowLocal[i].style.top = `${snowLocal[i].posy}px`;
-        const snowflakeSize = `${randommaker(snowsizerange) + snowminsize}px`;
-        snowLocal[i].style.width = snowflakeSize;
-        snowLocal[i].style.height = snowflakeSize;
-        snowLocal[i].childNodes[0].style.width = snowflakeSize;
-        snowLocal[i].childNodes[0].style.height = snowflakeSize;
-        // console.log(snowflakeSize);
-        snowLocal[i].childNodes[0].src = `http://www.s-sta.online/snow/${snowflakes[randommaker(snowflakes.length)]}`;
-
+        this.snowLocal[i].sink = sinkSpeed * this.snowLocal[i].size/5;
+        this.snowLocal[i].posx = this.randommaker(marginRight - this.snowLocal[i].size);
+        this.snowLocal[i].posy= this.randommaker(2 * marginBottom - marginBottom - 2 * this.snowLocal[i].size);
+        this.snowLocal[i].style.left = `${this.snowLocal[i].posx}px`;
+        this.snowLocal[i].style.top = `${this.snowLocal[i].posy}px`;
+        const snowflakeSize = `${this.randommaker(snowsizerange) + snowminsize}px`;
+        this.snowLocal[i].style.width = snowflakeSize;
+        this.snowLocal[i].style.height = snowflakeSize;
+        this.snowLocal[i].childNodes[0].style.width = snowflakeSize;
+        this.snowLocal[i].childNodes[0].style.height = snowflakeSize;
+        this.snowLocal[i].childNodes[0].src = `http://www.s-sta.online/snow/${snowflakes[this.randommaker(snowflakes.length)]}`;
       }
-      movesnow();
-    }
 
-    function movesnow() {
+      this.movesnow();
+    },
+    movesnow: function () {
+      const marginRight = this.$refs.snowflake_block.offsetWidth;
 
-      for (let i = 0; i <= snowmax; i++) {
-        crds[i] += x_mv[i];
-        snowLocal[i].posy += snowLocal[i].sink;
+      for (let i = 0; i <= this.snowMax; i++) {
+        this.crds[i] += this.x_mv[i];
+        this.snowLocal[i].posy += this.snowLocal[i].sink;
         
-        snowLocal[i].style.left=`${snowLocal[i].posx+lftrght[i]*Math.sin(crds[i])}px`;
-        snowLocal[i].style.top = `${snowLocal[i].posy}px`;
+        this.snowLocal[i].style.left=`${this.snowLocal[i].posx + this.lftrght[i] * Math.sin(this.crds[i])}px`;
+        this.snowLocal[i].style.top = `${this.snowLocal[i].posy}px`;
         
-        if (snowLocal[i].posy>=marginbottom-2*snowLocal[i].size || parseInt(snowLocal[i].style.left)>(marginright-3*lftrght[i])) {
-          snowLocal[i].posx=randommaker(marginright-snowLocal[i].size);
-          snowLocal[i].posy=0;
+        if (this.snowLocal[i].posy >= this.actualMarginBottom - 2 * this.snowLocal[i].size ||
+            parseInt(this.snowLocal[i].style.left) > (marginRight - 3 * this.lftrght[i])) {
+          this.snowLocal[i].posx = this.randommaker(marginRight - this.snowLocal[i].size);
+          this.snowLocal[i].posy = 0;
         }
       }
 
       // console.log(this.snow);
-      // setTimeout(movesnow, 10);
+      setTimeout(this.movesnow, 150);
+    },
+    snowToPage: function () {
+      for (let i = 0; i <= this.snowMax; i++) {
+        this.$refs.snowflake_block.insertAdjacentHTML('afterbegin', "<span id='s" + i + "' class='snow-block__snowflake' style='position:absolute;top:-" + this.snowMaxSize + "'>" + "<img alt='#'></span>");
+      }
     }
+  },
+  watch: {
+    snowConditions: function () {
+      if (this.snowConditions) {
+        const allSnowflakes = document.querySelectorAll('div.snow-block > span');
 
-    for (let i = 0; i <= snowmax; i++) {
-      console.log(snowmaxsize);
-      this.$refs.snowflake_block.insertAdjacentHTML('afterbegin', "<span id='s" + i + "' class='snow-block__snowflake' style='position:absolute;top:-" + snowmaxsize + "'>" + "<img alt='#'></span>");
+        console.log(allSnowflakes.length);
+        for (let i = 0; i <= allSnowflakes.length; i++) {
+          if (allSnowflakes[i] !== undefined) {
+            allSnowflakes[i].remove();
+          }
+        }
+      } else if (!this.snowConditions) {
+        this.snowToPage();
+        this.initsnow();
+      }
     }
-
-    initsnow();
-
+  },
+  mounted() {
+    this.snowToPage();
+    this.initsnow();
   }
 }
 </script>
@@ -173,14 +167,23 @@ export default {
   .snow-block{
     width: 100%;
     height: 0;
+
+    &__snowflake{
+      transition: left 3s, top 3s;
+      -webkit-transition: left 3s, top 3s;
+    }
   }
 
   .snow-parameters{
     position: fixed;
-    width: 150px;
+    width: 200px;
     height: auto;
-    left: 50px;
-    top: 100px;
+    right: 50px;
+    top: 70%;
+    z-index: 99999999;
+    @media (max-width: 867px) {
+      right: 20px;
+    }
 
     &__titel{
       width: 100%;
@@ -189,8 +192,18 @@ export default {
 
     &__titel>span{
       text-align: center;
-      color: #797979;
+      color: #fff;
       font-size: 0.954rem;
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+    }
+
+    &__remove-wrapper{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font-size: 0.85rem;
       font-family: Avenir, Helvetica, Arial, sans-serif;
     }
 
