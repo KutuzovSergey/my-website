@@ -16,7 +16,7 @@
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="http://www.s-sta.online.tutoring-courses.s-sta.online" class="gallery__link" target="_blank">
+        <a href="/myWork/course/index.html" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_8.png" alt="courses">
         
           <div class="gallery__discription" id="courses">
@@ -24,17 +24,24 @@
           </div>
         </a>
       </div>
-      <div class="gallery__block website" id="woodenHousesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/housesBaths/index.html" class="gallery__link" target="_blank">
-          <img src="@/assets/portfolio/0_5.png" alt="wooden houses">
-        
-          <div class="gallery__discription" id="woodenHouses">
-            <span>многостраничный сайт. продажа деревянных домов</span>
+
+      <div 
+        class="gallery__block landing" 
+        id="zeusBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription">
+
+        <a href="/myWork/zeus/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/5.png" alt="zeus3000">
+      
+          <div class="gallery__discription" id="zeus">
+            <span>сайт-визитка, лендинг для продажи zeus3000</span>
           </div>
         </a>
       </div>
+
       <div class="gallery__block website" id="muscovitesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/drummers/index.php" class="gallery__link" target="_blank">
+        <a href="/myWork/drummers/index.html" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_3.png" alt="muscovites">
         
           <div class="gallery__discription" id="muscovites">
@@ -42,7 +49,8 @@
           </div>
         </a>
       </div>
-      <div class="gallery__block landing" id="quizizzBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
+
+      <div class="gallery__block landing" id="quizizzBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription" v-show="showPortfolio">
         <a href="/myWork/quiz/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="quizizz">
         
@@ -72,10 +80,9 @@
         class="gallery__block gallery__block-hidden landing" 
         id="bredliBlock" 
         @mouseenter="showingDescription" 
-        @mouseleave="hidingDescription" 
-        v-show="showPortfolio">
+        @mouseleave="hidingDescription">
 
-        <a href="/myWork/bredli/index.html" target="_blank" class="gallery__link">
+        <a href="/myWork/BREDLI/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/4.png" alt="bredli">
 
           <div class="gallery__discription" id="bredli">
@@ -100,29 +107,25 @@
         </a>
       </div>
 
-      <div 
-        class="gallery__block landing" 
-        id="zeusBlock" 
-        @mouseenter="showingDescription" 
-        @mouseleave="hidingDescription" 
-        v-show="showPortfolio">
-
-        <a href="/myWork/zeus/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/5.png" alt="zeus3000">
       
-          <div class="gallery__discription" id="zeus">
-            <span>сайт-визитка, лендинг для продажи zeus3000</span>
+
+			<div class="gallery__block website" id="woodenHousesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription" v-show="showPortfolio">
+        <a href="/myWork/housesBaths/index.html" class="gallery__link" target="_blank">
+          <img src="@/assets/portfolio/0_5.png" alt="wooden houses">
+        
+          <div class="gallery__discription" id="woodenHouses">
+            <span>многостраничный сайт. продажа деревянных домов</span>
           </div>
         </a>
       </div>
 
     </div>
-    <div class="portfolio__link" @click="showFullPortfolio" v-show="!showPortfolio">
+    <!--<div class="portfolio__link" @click="showFullPortfolio" v-show="!showPortfolio">
       <span>смотреть больше</span>
     </div>
     <div class="portfolio__link" @click="hideFullPortfolio" v-show="showPortfolio">
       <span>скрыть</span>
-    </div>
+    </div>-->
   </section>
 </template>
 

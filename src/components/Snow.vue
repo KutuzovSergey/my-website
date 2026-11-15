@@ -137,7 +137,7 @@ export default {
         this.snowLocal[i].style.height = snowflakeSize;
         this.snowLocal[i].childNodes[0].style.width = snowflakeSize;
         this.snowLocal[i].childNodes[0].style.height = snowflakeSize;
-        this.snowLocal[i].childNodes[0].src = `http://www.s-sta.online/snow/${snowflakes[this.randommaker(snowflakes.length)]}`;
+        this.snowLocal[i].childNodes[0].src = `https://raw.githubusercontent.com/KutuzovSergey/images/refs/heads/main/snow/${snowflakes[this.randommaker(snowflakes.length)]}`;
       }
 
       this.moveSnow();
