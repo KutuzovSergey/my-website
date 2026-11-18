@@ -60,6 +60,21 @@
         </a>
       </div>
 
+			<div 
+        class="gallery__block gallery__block-hidden landing" 
+        id="bredliBlock" 
+        @mouseenter="showingDescription" 
+        @mouseleave="hidingDescription">
+
+        <a href="/my-website/myWork/BREDLI/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/4.png" alt="bredli">
+
+          <div class="gallery__discription" id="bredli">
+            <span>сайт-визитка, лендинг. компания по установке охранных систем bredli</span>
+          </div>
+        </a>
+      </div>
+
       <div 
         class="gallery__block gallery__block-hidden landing" 
         id="greetingsBlock" 
@@ -72,21 +87,6 @@
         
           <div class="gallery__discription" id="greetings">
             <span>email письмо. новогодние поздравления</span>
-          </div>
-        </a>
-      </div>
-
-      <div 
-        class="gallery__block gallery__block-hidden landing" 
-        id="bredliBlock" 
-        @mouseenter="showingDescription" 
-        @mouseleave="hidingDescription">
-
-        <a href="/myWork/BREDLI/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/4.png" alt="bredli">
-
-          <div class="gallery__discription" id="bredli">
-            <span>сайт-визитка, лендинг. компания по установке охранных систем bredli</span>
           </div>
         </a>
       </div>

@@ -66,18 +66,16 @@
           <ul class="data__wrapper data__wrapper-name">
             <li class="data__item"><span>Имя</span><span>:</span></li>
             <li class="data__item"><span>Адрес</span><span>:</span></li>
-            <li class="data__item"><span>Телефон</span><span>:</span></li>
-            <li class="data__item"><span>WhatsApp</span><span>:</span></li>
+            <li class="data__item"><span>Телефон РФ</span><span>:</span></li>
+            <li class="data__item"><span>Телефон Сербия</span><span>:</span></li>
             <li class="data__item"><span>Email</span><span>:</span></li>
-            <li class="data__item"><span>Сайт</span><span>:</span></li>
           </ul>
           <ul class="data__wrapper data__wrapper-info">
             <li class="data__info">Sergey</li>
-            <li class="data__info">г.Москва</li>
+            <li class="data__info">Сербия г. Нови-Сад</li>
             <li class="data__info">+7 (977) 350-67-84</li>
-            <li class="data__info">+7 (977) 350-67-84</li>
+            <li class="data__info">+381 (62) 943-7604</li>
             <li class="data__info">SergeiPasekin@yandex.ru</li>
-            <li class="data__info">http://kutuzov.site/</li>
           </ul>
         </div>
       </div>
