@@ -16,7 +16,7 @@
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website" id="coursesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/course/index.html" class="gallery__link" target="_blank">
+        <a href="/my-website/myWork/course/" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_8.png" alt="courses">
         
           <div class="gallery__discription" id="courses">
@@ -31,7 +31,7 @@
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription">
 
-        <a href="/myWork/zeus/index.html" target="_blank" class="gallery__link">
+        <a href="/my-website/myWork/zeus/" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/5.png" alt="zeus3000">
       
           <div class="gallery__discription" id="zeus">
@@ -41,7 +41,7 @@
       </div>
 
       <div class="gallery__block website" id="muscovitesBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription">
-        <a href="/myWork/drummers/index.html" class="gallery__link" target="_blank">
+        <a href="/my-website/myWork/drummers/index.html" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_3.png" alt="muscovites">
         
           <div class="gallery__discription" id="muscovites">
@@ -51,7 +51,7 @@
       </div>
 
       <div class="gallery__block landing" id="quizizzBlock" @mouseenter="showingDescription" @mouseleave="hidingDescription" v-show="showPortfolio">
-        <a href="/myWork/quiz/index.html" target="_blank" class="gallery__link">
+        <a href="/my-website/myWork/quiz/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="quizizz">
         
           <div class="gallery__discription" id="quizizz">
