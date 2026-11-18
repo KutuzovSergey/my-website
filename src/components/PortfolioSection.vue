@@ -31,7 +31,7 @@
         @mouseenter="showingDescription" 
         @mouseleave="hidingDescription">
 
-        <a href="/my-website/myWork/zeus/" target="_blank" class="gallery__link">
+        <a href="/my-website/myWork/vr-gun-landing/" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/5.png" alt="zeus3000">
       
           <div class="gallery__discription" id="zeus">

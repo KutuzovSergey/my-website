@@ -439,6 +439,11 @@ h3.ind3{
 
 .offer{
 	overflow: hidden;
+	height: 220px;
+}
+
+.offer.full_text {
+	height: auto;
 }
 
 .offer .headpiece{
@@ -810,11 +815,19 @@ legend{
 	font-size:12px; 
 	border:1px solid #b1b1b1;
 	color:#484c51;
-	padding:16px 15px 17px;
+	padding:6px 17px;
 	outline:none;
 	position:relative;
+	cursor: pointer;
 	font-family:Arial, Helvetica, sans-serif;
 	background:#fff;
+}
+#contact-form input[type="submit"] {
+	margin-bottom: 15px;
+}
+#contact-form input[type="submit"]:hover {
+	color: #fff;
+	background-color: #c81714;
 }
 #contact-form textarea {
 	overflow: auto;
@@ -1222,9 +1235,10 @@ header h1{
 .offer img, .box1 img{
 	width: 100%;
 }
-.offer{
+.offer {
 	margin-bottom: 0;
 }
+
 #newsletter{
 	float: none;
 }
